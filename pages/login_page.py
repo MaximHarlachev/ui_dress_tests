@@ -1,6 +1,6 @@
 from selenium.webdriver.remote.webelement import WebElement
 
-from conftest import logger
+# from conftest import logger
 from locators.base_page_locators import BasePageLocators
 from locators.personal_data_page_locators import PersonalPageLocators
 from models.auth import AuthData
@@ -41,7 +41,7 @@ class LoginPage(BasePage):
         return self.find_element(BasePageLocators.CONFIRM_EXIT_BUTTON)
 
     def auth(self, data: AuthData):
-        logger.info(f'Try to auth with login {data.login}, password {data.password}')
+        # logger.info(f'Try to auth with login {data.login}, password {data.password}')
         # Проверка, есть ли кнопка подтверждения выхода
         if self.is_exit_confire_button():
             self.click_element(self.exit_confire()[0])

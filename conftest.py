@@ -7,17 +7,17 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 from models.auth import AuthData
 
-import logging
+# import logging
 
 from pages.application import Application
 
-logger = logging.getLogger("moodle")
+# logger = logging.getLogger("moodle")
 
 
 @pytest.fixture(scope="session")
 def app(request):
     base_url = request.config.getoption("--base-url")
-    logger.info(f'Start browser, url is {base_url}')
+    # logger.info(f'Start browser, url is {base_url}')
     chrome_options = Options()
     fixture = Application(webdriver.Chrome(ChromeDriverManager().install(),
                                            chrome_options=chrome_options), base_url)
