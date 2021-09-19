@@ -19,6 +19,7 @@ def app(request):
     base_url = request.config.getoption("--base-url")
     # logger.info(f'Start browser, url is {base_url}')
     chrome_options = Options()
+    chrome_options.add_argument("--headless")
     fixture = Application(webdriver.Chrome(ChromeDriverManager().install(),
                                            chrome_options=chrome_options), base_url)
     yield fixture
