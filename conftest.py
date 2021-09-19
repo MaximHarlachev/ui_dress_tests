@@ -49,5 +49,8 @@ def pytest_addoption(parser):
         help="enter username",
     ),
     parser.addoption(
-        "--password", action="store", default="Fak2@oprE", help="enter password",
+        "--password",
+        action="store",
+        default="Fak2@oprE",
+        help="enter password",
     )
