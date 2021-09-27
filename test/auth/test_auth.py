@@ -27,27 +27,18 @@ class TestAuth:
         app.open_auth_page()
         data = AuthData.random()
         app.login.auth(data)
-        assert LoginConstants.AUTH_ERROR == app.login.auth_login_error(), "We are not auth"
+        assert LoginConstants.AUTH_ERROR == app.login.auth_login_error(), "We are auth!"
 
     @pytest.mark.parametrize("field", ["login", "password"])
     def test_auth_empty_data(self, app, field):
         """
-                Steps
-                1. Open main page
-                2. Auth with empty data
-                3. Check auth result
-                """
+        Steps
+        1. Open main page
+        2. Auth with empty data
+        3. Check auth result
+        """
         app.open_auth_page()
         data = AuthData.random()
         setattr(data, field, None)
         app.login.auth(data)
-        assert LoginConstants.AUTH_ERROR == app.login.auth_login_error(), "We are not auth"
-
-    def test_auth_test(self, app, auth):
-        """
-                Steps
-                1. Open main page
-                2. Auth with valid data
-                3. Check auth result
-                """
-        app.open_main_page()
+        assert LoginConstants.AUTH_ERROR == app.login.auth_login_error(), "We are auth!"
