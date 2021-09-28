@@ -30,7 +30,7 @@ class CourseConstants:
 class CreateCourseConstants:
     SECTION_NUMBER = 52
     COURSE_LANGUAGE = "ru"
-    CURRENT_YEAR = 1900
+    CURRENT_YEAR = 2020
     LAST_YEAR = 2050
     FILE_SIZES_VALUES = [
         0,

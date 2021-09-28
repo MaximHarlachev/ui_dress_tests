@@ -45,7 +45,7 @@ class TestPersonalData:
             not app.personal_data.is_changed()
         ), "Personal data should not be changed!"
 
-    @pytest.mark.parametrize("email", ["nilluziafmail.ru", "@mail.ru", "111"])
+    @pytest.mark.parametrize("email", ["primermail.ru", "@mail.ru", "213"])
     def test_edit_basic_personal_data_with_incorrect_email(self, app, auth, email):
         """
         Steps
@@ -67,7 +67,7 @@ class TestPersonalData:
     @pytest.mark.parametrize(
         "name, last_name",
         [
-            ["123", "123"],
+            ["385", "976"],
             ["---", "---"],
             ["\xbdR6\x10\x7f", "\xbdR6\x10\x7f"],
             [PD().random().url, PD().random().url],
@@ -94,31 +94,6 @@ class TestPersonalData:
         assert (
             not app.personal_data.is_changed()
         ), "Personal data should not be changed!"
-
-    @pytest.mark.set_user_image
-    @pytest.mark.parametrize(
-        "image_file",
-        [
-            os.path.join(user_images_directory, image)
-            for image in os.listdir(user_images_directory)
-        ],
-    )
-    def test_set_user_image(self, app, auth, image_file):
-        """
-        Steps
-        1. Open auth page
-        2. Auth with valid data
-        3. Check auth result
-        4. Go to page with editing personal data
-        5. Edit user image
-        6. Check successfully editing
-        """
-        app.login.go_to_editing_personal_data()
-        personal_data = PD.random()
-        app.personal_data.set_user_image(
-            image_file, personal_data.user_image_description
-        )
-        assert app.personal_data.is_user_image_changed(), "User image not changed!"
 
     def test_valid_edit_more_personal_data(self, app, auth):
         """
