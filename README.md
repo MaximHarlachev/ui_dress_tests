@@ -2,7 +2,6 @@
 
 # Тесты для приложения ["Курсы"](https://qacoursemoodle.innopolis.university)
 
-![Курсы](logo.png)
 
 ## Установка
 ***
